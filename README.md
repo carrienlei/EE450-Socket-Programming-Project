@@ -3,9 +3,11 @@ Carrie Lei
 
 Student ID: 9718619209
 
+
 ## Overview + Completed Sections: 
 
 For my EE450 Socket Programming project, I have created a library server system where clients with authenticated credentials can enter book queries and access their respective availability statuses. I have completed Phases 1-4 of the project criteria. This consists of: Boot-Up, Login and Confirmation, Frowarding Request to Backend Servers, and the Reply.
+
 
 ## Code Files and Purposes:
 
@@ -22,6 +24,7 @@ For serverH.cpp, this is the history server that is boot-up third. It is in char
 For client.cpp, this is the client server that is boot-up last. It communicates via TCP with the main server and is where users can enter the book query they wish to check.
 
 Lastly, there is a Makefile that compiles all the code into executables.
+
 
 ## Format of Exchanged Messages:
 
@@ -42,5 +45,19 @@ For the backend servers (serverS.cpp, serverL.cpp, and serverH.cpp), the followi
 - [ "Zero left in ServerS's database. Sending reply to ServerM" ] - This is printed if the book code was found in the backend server _and_ the number of books left for that code is 0.
 
 For client.cpp, the following messages are exchanged:
+- [ "Please enter the username: " / "Please enter the password: " ] - This is prompted after the TCP connection is established with the main server.
+- [ username << " received the result of authentication from Main Server using TCP over port 45209. Authentication is successful." ] - This is printed after it receives from serverM that the login credentials are valid.
+- [ username << "received the result of authentication from Main Server using TCP over port 45209. Authentication failed: Username is not found." ] - This is printed after it receives from serverM that the username is not found.
+- [ username << "received the result of authentication from Main Server using TCP over port 45209. Authentication failed: Password does not match."] - This is printed after it receives from serverM that the username is found, but the entered password does not correspond.
+- [ "Please enter book code to query: " ] - This is printed following a successful login authentication prompting for a book query.
+- [ username + " sent the request to the Main Server." ] - This is printed after the book query is sent to the main server.
+- [ "Response received from the Main Server on TCP port: 45209." ] - This is printed after the main server responds with the book code's availability.
+- [ "The requested book " << bookCode << " is available in the library.\n--- Start a new query ---" ] - This is printed if the requested book is available.
+- [ "The requested book " << bookCode << " is NOT available in the library.\n--- Start a new query ---" ] - This is printed if the requested book is not available. (0 left)
+- [ "Not able to find the book code " << bookCode << " in the system.\n--- Start a new query ---" ] - This is printed if the requested book is not in any server.
+
+## Idiosyncracies
+
+
 
 
