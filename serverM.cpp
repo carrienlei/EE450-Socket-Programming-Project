@@ -43,10 +43,10 @@ void receiveAndPrintDatabase(int port, const char* serverName, map<string, int>&
         buffer[bytesReceived] = '\0'; 
         cout << "Main Server received the book code list from " << serverName << " using UDP over port " << port << endl;
 
-        // Process and store the received data into the combined main database. Code inspired from Stack Overflow article on reading in strings as denoted in ReadMe.
+        // Process and store the received data into the combined main database. Code inspired from Stack Overflow article on reading in strings and using getline as denoted in ReadMe.
         istringstream iss(buffer);
         string line;
-        while (getline(iss, line)) {
+        while (getline(iss, line)) { 
             istringstream lineStream(line);
             string bookCode;
             string amountStr;

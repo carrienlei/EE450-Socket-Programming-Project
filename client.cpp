@@ -10,7 +10,7 @@
 
 using namespace std;
 
-// Encryption function - Used help from https://www.kindsonthegenius.com/cplusplus/c-string-manipulation/ to understand string manipulation and Chat-GPT for structure inspo
+// Encryption function - Used help from kindsOnTheGenius to understand string manipulation and Chat-GPT for structure inspiration as denoted in ReadMe
 void encrypt(string& data) {
     for (char& a : data) {
         if (isalpha(a)) { // Handles characters
@@ -97,7 +97,7 @@ int main() {
                     if (bytesReceived != -1) {
                         buffer[bytesReceived] = '\0'; // Null-terminate the received data
                         cout << "Response received from the Main Server on TCP port: 45209." << endl;
-                        if (strcmp(buffer, "BookAvailable") == 0) { // Used https://cplusplus.com/reference/cstring/strcmp/
+                        if (strcmp(buffer, "BookAvailable") == 0) { // Used C++ strcmp help from source denoted in ReadMe
                             cout << "The requested book " << bookCode << " is available in the library.\n--- Start a new query ---" << endl;
                         } 
                         else if (strcmp(buffer, "BookNotAvailable") == 0) {
