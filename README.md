@@ -29,5 +29,13 @@ Lastly, there is a Makefile that compiles all the code into executables.
 Format of Exchanged Messages:
 
 For serverM.cpp, the following messages are exchanged:
-- [ "Main Server received the book code list from " << serverName << " using UDP over port " << port ]
+- [ "Main Server received the book code list from " << serverName << " using UDP over port " << port ] - This is printed when the main server receives the book code lists upon boot-up from the backend servers.
+- [ "Main Server received the username and password from the client using TCP over port 45209." ] - This is printed when the main server receives login credentials from the client server.
+- [ encryptedUsername << " is not registered. Send a reply to client" ] - This is printed when the login username is not found in member.txt.
+- [ "Password " << encryptedPassword<< " does not match the username. Send a reply to the client" ] - This is printed when the username is found, but the password doesn't match.
+- [ "Password " << encryptedPassword<< " matches the username. Send a reply to the client" ] - This is printed when the username and password are found and match.
+- [ "Main Server received the book request from client using TCP over port 45209." ] - This is printed when the main server receives a book query request from the client.
+- [ "Found " << bookCodeQuery << " located at Server " << backendServer<<". Send to Server "<< backendServer << "." ] - This is printed when the book query is found in the database, and serverM sends the request to the appropriate backend server.
+- [ "Main Server received from server " << backendServer<< " the book status result using UDP over port " <<backendServerPort<<":\nNumber of books " << bookCodeQuery<< " available is: " << receivedMessage.substr(17) ] - This is printed after the main server receives a response from the backend server and denotes the number of books available left.
+- [ "Main Server sent the book status to the client." ] - This is printed after the main server sends the book query's availability status back to the client.  
 
