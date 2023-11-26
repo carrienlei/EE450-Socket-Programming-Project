@@ -56,12 +56,20 @@ For client.cpp, the following messages are exchanged:
 - [ "The requested book " << bookCode << " is NOT available in the library.\n--- Start a new query ---" ] - This is printed if the requested book is not available. (0 left)
 - [ "Not able to find the book code " << bookCode << " in the system.\n--- Start a new query ---" ] - This is printed if the requested book is not in any server.
 
-## Idiosyncracies + Potential Areas for Improvement
+## Idiosyncracies + Potential Next Steps
 
 Overall, I didn't find conditions in which my project would fail as I tested using the guidelines/login credentials outlined by the project criteria. However, I did notice that occasionally, if I quickly restarted the servers right after closing them, the TCP connection between the client and main server sometimes didn't bind, and the client would throw an error saying it had trouble binding to the main server. This issue resolves itself if I just waited more time in between closing and reopening the servers. Also, I think it's just the nature of TCP communication where it must establish an end-to-end connection for that layer of security that UDP doesn't have.
 
-As for future areas of improvement and further development, 
+As for future areas of improvement and further development, I think it would be a cool feature to add the admin inventory management tool that allows an administrator to check the amount of a certain book on the client screen. Also, it would be neat to also implement a "return book" feature; essentially allowing the client to enter the book code it wants to return and then updating the respective backend server to increase the amount of that book by 1.
 
+## Reused Code:
 
+I used inspiration from the following sources, as well as minor assistance from Chat-GPT, to help guide me through various parts of the project:
 
+- Geek for Geeks Article on UDP Communication: https://www.geeksforgeeks.org/udp-server-client-implementation-c/#
+- Stack Overflow on Reading in Strings in Socket Programming: https://stackoverflow.com/questions/20594520/what-exactly-does-stringstream-do
+- kindsOnTheGenius Forum for C++ String Manipulation: https://www.kindsonthegenius.com/cplusplus/c-string-manipulation/
+- C++ Website on strcmp function: https://cplusplus.com/reference/cstring/strcmp/
+- Geek for Geeks Article on Getline function: https://www.geeksforgeeks.org/getline-string-c/
 
+I have denoted in the comments where these sources helped me.
