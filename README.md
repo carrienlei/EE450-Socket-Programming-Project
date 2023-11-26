@@ -3,7 +3,7 @@ Carrie Lei
 
 Student ID: 9718619209
 
-## Overview + Completed Sections:
+## Overview + Completed Sections: ##
 
 For my EE450 Socket Programming project, I have created a library server system where clients with authenticated credentials can enter book queries and access their respective availability statuses. I have completed Phases 1-4 of the project criteria. This consists of: Boot-Up, Login and Confirmation, Frowarding Request to Backend Servers, and the Reply.
 
