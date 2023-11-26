@@ -56,7 +56,11 @@ For client.cpp, the following messages are exchanged:
 - [ "The requested book " << bookCode << " is NOT available in the library.\n--- Start a new query ---" ] - This is printed if the requested book is not available. (0 left)
 - [ "Not able to find the book code " << bookCode << " in the system.\n--- Start a new query ---" ] - This is printed if the requested book is not in any server.
 
-## Idiosyncracies
+## Idiosyncracies + Potential Areas for Improvement
+
+Overall, I didn't find conditions in which my project would fail as I tested using the guidelines/login credentials outlined by the project criteria. However, I did notice that occasionally, if I quickly restarted the servers right after closing them, the TCP connection between the client and main server sometimes didn't bind, and the client would throw an error saying it had trouble binding to the main server. This issue resolves itself if I just waited more time in between closing and reopening the servers. Also, I think it's just the nature of TCP communication where it must establish an end-to-end connection for that layer of security that UDP doesn't have.
+
+As for future areas of improvement and further development, 
 
 
 
