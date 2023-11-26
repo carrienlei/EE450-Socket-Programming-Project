@@ -37,5 +37,13 @@ For serverM.cpp, the following messages are exchanged:
 - [ "Main Server received the book request from client using TCP over port 45209." ] - This is printed when the main server receives a book query request from the client.
 - [ "Found " << bookCodeQuery << " located at Server " << backendServer<<". Send to Server "<< backendServer << "." ] - This is printed when the book query is found in the database, and serverM sends the request to the appropriate backend server.
 - [ "Main Server received from server " << backendServer<< " the book status result using UDP over port " <<backendServerPort<<":\nNumber of books " << bookCodeQuery<< " available is: " << receivedMessage.substr(17) ] - This is printed after the main server receives a response from the backend server and denotes the number of books available left.
-- [ "Main Server sent the book status to the client." ] - This is printed after the main server sends the book query's availability status back to the client.  
+- ["Did not find " << bookCodeQuery << " in the book code list." ] - This is printed if the main server receives a book query that was not found in its database.
+- [ "Main Server sent the book status to the client." ] - This is printed after the main server sends the book query's availability status back to the client.
+
+For the backend servers (serverS.cpp, serverL.cpp, and serverH.cpp), the following messages are exchanged:
+- [ "Book code found." ] - This is printed if the book code was found in the backend server _and_ the number of books left for that code is greater than 0.
+- [ "Zero left in ServerS's database. Sending reply to ServerM" ] - This is printed if the book code was found in the backend server _and_ the number of books left for that code is 0.
+
+For client.cpp, the following messages are exchanged:
+
 
