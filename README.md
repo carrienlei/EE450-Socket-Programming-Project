@@ -3,14 +3,12 @@ Carrie Lei
 
 Student ID: 9718619209
 
-## 
-**Overview + Completed Sections:
-**
+## Overview + Completed Sections:
+
 For my EE450 Socket Programming project, I have created a library server system where clients with authenticated credentials can enter book queries and access their respective availability statuses. I have completed Phases 1-4 of the project criteria. This consists of: Boot-Up, Login and Confirmation, Frowarding Request to Backend Servers, and the Reply.
 
-##
-**Code Files and Purposes:
-**
+## Code Files and Purposes:
+
 In my project, I have 5 CPP files, a Makefile, and this ReadMe.md file. 
 
 For serverM.cpp, this is the main server that is boot-up first. It handles TCP communications with the client and UDP communications with the backend servers. It will handle the TCP book query from the client and send the request to the respective backend server via UDP.
@@ -25,9 +23,8 @@ For client.cpp, this is the client server that is boot-up last. It communicates 
 
 Lastly, there is a Makefile that compiles all the code into executables.
 
-##
-**Format of Exchanged Messages:
-**
+## Format of Exchanged Messages:
+
 For serverM.cpp, the following messages are exchanged:
 - [ "Main Server received the book code list from " << serverName << " using UDP over port " << port ] - This is printed when the main server receives the book code lists upon boot-up from the backend servers.
 - [ "Main Server received the username and password from the client using TCP over port 45209." ] - This is printed when the main server receives login credentials from the client server.
