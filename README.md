@@ -6,7 +6,7 @@ Student ID: 9718619209
 
 ## Overview + Completed Sections: 
 
-For my EE450 Socket Programming project, I have created a library server system where clients with authenticated credentials can enter book queries and access their respective availability statuses. I have completed Phases 1-4 of the project criteria. This consists of: Boot-Up, Login and Confirmation, Frowarding Request to Backend Servers, and the Reply.
+For my EE450 Socket Programming project, I have created a library server system where clients with authenticated credentials can enter book queries and access their respective availability statuses. I have completed Phases 1-4 of the project criteria. This consists of: Boot-Up, Login and Confirmation, Forwarding Request to Backend Servers, and the Reply.
 
 
 ## Code Files and Purposes:
@@ -62,9 +62,9 @@ Overall, I didn't find conditions in which my project would fail as I tested usi
 
 As for future areas of improvement and further development, I think it would be a cool feature to add the admin inventory management tool that allows an administrator to check the amount of a certain book on the client screen. Also, it would be neat to also implement a "return book" feature; essentially allowing the client to enter the book code it wants to return and then updating the respective backend server to increase the amount of that book by 1.
 
-## Reused Code:
+## Code Guidance:
 
-I used inspiration from the following sources, as well as minor assistance from Chat-GPT, to help guide me through various parts of the project:
+I used inspiration from the following sources, Beej's Guide, as well as minor assistance from Chat-GPT, to help guide me through various parts of the project:
 
 - Geek for Geeks Article on UDP Communication: https://www.geeksforgeeks.org/udp-server-client-implementation-c/#
 - Stack Overflow on Reading in Strings in Socket Programming: https://stackoverflow.com/questions/20594520/what-exactly-does-stringstream-do
